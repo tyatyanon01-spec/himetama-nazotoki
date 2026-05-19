@@ -1,58 +1,69 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ひめたま謎解き散歩</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ひめたま謎解き散歩</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="page active" id="page0">
-<img src="images/story.png" class="main-image">
-<button onclick="nextPage(1)">プロローグへ</button>
-</div>
+  <!-- オープニング -->
+  <section class="page">
+    <img src="images/opening1.png" class="story-image">
+  </section>
 
-<div class="page" id="page1">
-<img src="images/prologue.png" class="main-image">
-<button onclick="nextPage(2)">第1問へ</button>
-</div>
+  <section class="page">
+    <img src="images/opening2.png" class="story-image">
+    <button onclick="nextPage()">謎解きを始める</button>
+  </section>
 
-<div class="page" id="page2">
-<img src="images/q1.png" class="main-image">
-<input type="text" id="a1" placeholder="答え">
-<button onclick="checkAnswer('a1','さくら',3)">送信</button>
-</div>
+  <!-- 問題1 -->
+  <section class="page hidden">
+    <img src="images/q1.png" class="story-image">
 
-<div class="page" id="page3">
-<img src="images/q2.png" class="main-image">
-<input type="text" id="a2" placeholder="答え">
-<button onclick="checkAnswer('a2','ひまわり',4)">送信</button>
-</div>
+    <input type="text" id="answer1" placeholder="答えを入力">
+    <button onclick="checkAnswer(1, 'さくら')">回答</button>
+  </section>
 
-<div class="page" id="page4">
-<img src="images/q3.png" class="main-image">
-<input type="text" id="a3" placeholder="答え">
-<button onclick="checkAnswer('a3','しらん',5)">送信</button>
-</div>
+  <!-- 問題2 -->
+  <section class="page hidden">
+    <img src="images/q2.png" class="story-image">
 
-<div class="page" id="page5">
-<img src="images/q4.png" class="main-image">
-<input type="text" id="a4" placeholder="答え">
-<button onclick="checkAnswer('a4','きずな',6)">送信</button>
-</div>
+    <input type="text" id="answer2" placeholder="答えを入力">
+    <button onclick="checkAnswer(2, 'きつね')">回答</button>
+  </section>
 
-<div class="page" id="page6">
-<img src="images/q5.png" class="main-image">
-<input type="text" id="a5" placeholder="答え">
-<button onclick="checkAnswer('a5','しらん',7)">送信</button>
-</div>
+  <!-- 問題3 -->
+  <section class="page hidden">
+    <img src="images/q3.png" class="story-image">
 
-<div class="page" id="page7">
-<img src="images/epilogue.png" class="main-image">
-<h2>クリアおめでとう！</h2>
-</div>
+    <input type="text" id="answer3" placeholder="答えを入力">
+    <button onclick="checkAnswer(3, 'ひめ')">回答</button>
+  </section>
 
-<script src="script.js"></script>
+  <!-- 問題4 -->
+  <section class="page hidden">
+    <img src="images/q4.png" class="story-image">
+
+    <input type="text" id="answer4" placeholder="答えを入力">
+    <button onclick="checkAnswer(4, 'えん')">回答</button>
+  </section>
+
+  <!-- 問題5 -->
+  <section class="page hidden">
+    <img src="images/q5.png" class="story-image">
+
+    <input type="text" id="answer5" placeholder="答えを入力">
+    <button onclick="checkAnswer(5, 'むすび')">回答</button>
+  </section>
+
+  <!-- エピローグ -->
+  <section class="page hidden">
+    <img src="images/epilogue.png" class="story-image">
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
