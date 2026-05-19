@@ -1,18 +1,25 @@
+function nextPage(nextId) {
 
-function nextPage(page){
-document.querySelectorAll('.page').forEach(p=>{
-p.classList.remove('active');
-});
-document.getElementById('page'+page).classList.add('active');
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    document.getElementById(nextId).classList.add('active');
 }
 
-function checkAnswer(inputId, correct, next){
-const ans = document.getElementById(inputId).value.trim();
+function checkAnswer(inputId, correctAnswer, nextId) {
 
-if(ans === correct){
-alert('正解！');
-nextPage(next);
-}else{
-alert('違います！');
-}
+    const answer = document
+        .getElementById(inputId)
+        .value
+        .trim();
+
+    if(answer === correctAnswer){
+
+        nextPage(nextId);
+
+    } else {
+
+        alert("答えが違います！");
+    }
 }

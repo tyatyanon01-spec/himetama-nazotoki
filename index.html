@@ -1,69 +1,114 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ひめたま謎解き散歩</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ひめたま謎解き散歩</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- オープニング -->
-  <section class="page">
-    <img src="images/opening1.png" class="story-image">
-  </section>
+    <!-- オープニング -->
+    <section class="page active" id="opening1">
+        <img src="images/opening1.png" class="story-image">
 
-  <section class="page">
-    <img src="images/opening2.png" class="story-image">
-    <button onclick="nextPage()">謎解きを始める</button>
-  </section>
+        <button onclick="nextPage('opening2')">
+            次へ
+        </button>
+    </section>
 
-  <!-- 問題1 -->
-  <section class="page hidden">
-    <img src="images/q1.png" class="story-image">
+    <!-- プロローグ -->
+    <section class="page" id="opening2">
+        <img src="images/opening2.png" class="story-image">
 
-    <input type="text" id="answer1" placeholder="答えを入力">
-    <button onclick="checkAnswer(1, 'さくら')">回答</button>
-  </section>
+        <button onclick="nextPage('q1')">
+            謎解きを始める
+        </button>
+    </section>
 
-  <!-- 問題2 -->
-  <section class="page hidden">
-    <img src="images/q2.png" class="story-image">
+    <!-- 問題1 -->
+    <section class="page" id="q1">
+        <img src="images/q1.png" class="story-image">
 
-    <input type="text" id="answer2" placeholder="答えを入力">
-    <button onclick="checkAnswer(2, 'きつね')">回答</button>
-  </section>
+        <input type="text" id="answer1" placeholder="答えを入力">
 
-  <!-- 問題3 -->
-  <section class="page hidden">
-    <img src="images/q3.png" class="story-image">
+        <button onclick="checkAnswer(
+            'answer1',
+            'さくら',
+            'q2'
+        )">
+            解答
+        </button>
+    </section>
 
-    <input type="text" id="answer3" placeholder="答えを入力">
-    <button onclick="checkAnswer(3, 'ひめ')">回答</button>
-  </section>
+    <!-- 問題2 -->
+    <section class="page" id="q2">
+        <img src="images/q2.png" class="story-image">
 
-  <!-- 問題4 -->
-  <section class="page hidden">
-    <img src="images/q4.png" class="story-image">
+        <input type="text" id="answer2" placeholder="答えを入力">
 
-    <input type="text" id="answer4" placeholder="答えを入力">
-    <button onclick="checkAnswer(4, 'えん')">回答</button>
-  </section>
+        <button onclick="checkAnswer(
+            'answer2',
+            'きつね',
+            'q3'
+        )">
+            解答
+        </button>
+    </section>
 
-  <!-- 問題5 -->
-  <section class="page hidden">
-    <img src="images/q5.png" class="story-image">
+    <!-- 問題3 -->
+    <section class="page" id="q3">
+        <img src="images/q3.png" class="story-image">
 
-    <input type="text" id="answer5" placeholder="答えを入力">
-    <button onclick="checkAnswer(5, 'むすび')">回答</button>
-  </section>
+        <input type="text" id="answer3" placeholder="答えを入力">
 
-  <!-- エピローグ -->
-  <section class="page hidden">
-    <img src="images/epilogue.png" class="story-image">
-  </section>
+        <button onclick="checkAnswer(
+            'answer3',
+            'ひめ',
+            'q4'
+        )">
+            解答
+        </button>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- 問題4 -->
+    <section class="page" id="q4">
+        <img src="images/q4.png" class="story-image">
+
+        <input type="text" id="answer4" placeholder="答えを入力">
+
+        <button onclick="checkAnswer(
+            'answer4',
+            'えん',
+            'q5'
+        )">
+            解答
+        </button>
+    </section>
+
+    <!-- 問題5 -->
+    <section class="page" id="q5">
+        <img src="images/q5.png" class="story-image">
+
+        <input type="text" id="answer5" placeholder="答えを入力">
+
+        <button onclick="checkAnswer(
+            'answer5',
+            'ごえん',
+            'epilogue'
+        )">
+            解答
+        </button>
+    </section>
+
+    <!-- エピローグ -->
+    <section class="page" id="epilogue">
+        <img src="images/epilogue.png" class="story-image">
+    </section>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
