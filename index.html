@@ -84,8 +84,7 @@ content="black-translucent">
 <img src="images/story1.png"
 class="story-image">
 
-<button onclick="showPage('q1')">
-
+<button onclick="showPage('story1')">
 第1問へ
 
 </button>
@@ -149,15 +148,27 @@ placeholder="答えを入力">
         第3問へ
     </button>
 </section>
-    <!-- 問題3 -->
-   checkAnswer(
-'answer3',
-'JSDF',
-'story4'
-)
-            解答
-        </button>
-    </section>
+   <!-- 問題3 -->
+<section id="q3" class="page">
+
+    <img src="images/q3.png"
+    class="story-image">
+
+    <input type="text"
+    id="answer3"
+    placeholder="答えを入力">
+
+    <button onclick="checkAnswer(
+    'answer3',
+    'JSDF',
+    'story4'
+    )">
+
+    解答
+
+    </button>
+
+</section>
 
 <section class="page story-page" id="story4">
     <img src="images/story4.png" class="story-image">
@@ -167,25 +178,57 @@ placeholder="答えを入力">
     </button>
 </section>
     <!-- 問題4 -->
-    checkAnswer(
-'answer4',
-'おいのりします',
-'story5'
-checkAnswer(
-'answer5',
-'しらん',
-'epilogue'
-)
-            解答
-        </button>
-    </section>
+<section id="q4" class="page">
 
-    <!-- エピローグ -->
-    <section class="page" id="epilogue">
-        <img src="images/epilogue.png" class="story-image">
-    </section>
+    <img src="images/q4.png"
+    class="story-image">
 
-    <script src="script.js"></script>
+    <input type="text"
+    id="answer4"
+    placeholder="答えを入力">
 
-</body>
-</html>
+    <button onclick="checkAnswer(
+    'answer4',
+    'おいのりします',
+    'story5'
+    )">
+
+    解答
+
+    </button>
+
+</section>
+<!-- 第5問ストーリー -->
+<section id="story5" class="page">
+
+    <img src="images/story5.png"
+    class="story-image">
+
+    <button onclick="showPage('q5')">
+
+    第5問へ
+
+    </button>
+
+</section>
+<!-- 問題5 -->
+<section id="q5" class="page">
+
+    <img src="images/q5.png"
+    class="story-image">
+
+    <input type="text"
+    id="answer5"
+    placeholder="答えを入力">
+
+    <button onclick="checkAnswer(
+    'answer5',
+    'しらん',
+    'epilogue'
+    )">
+
+    解答
+
+    </button>
+
+</section>
