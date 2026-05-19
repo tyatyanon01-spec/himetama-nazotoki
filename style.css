@@ -43,3 +43,203 @@ button {
     background: #8d4de8;
     color: white;
 }
+/* =========================
+   背景
+========================= */
+
+body{
+    margin:0;
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at top,
+    #b14dff 0%,
+    #4b0082 35%,
+    #120022 70%,
+    #000000 100%);
+
+    text-align:center;
+    font-family:sans-serif;
+    color:white;
+}
+
+/* =========================
+   星キラキラ
+========================= */
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:40px 40px;
+
+    opacity:0.25;
+
+    animation:sparkle 6s linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes sparkle{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(40px);
+    }
+}
+
+/* =========================
+   ページフェード
+========================= */
+
+.page{
+    display:none;
+
+    animation:fade 0.6s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   ガラスUI
+========================= */
+
+.page{
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    border-radius:24px;
+
+    margin:20px;
+
+    padding:20px;
+
+    box-shadow:
+    0 0 30px rgba(255,0,255,0.15);
+}
+
+/* =========================
+   画像
+========================= */
+
+.story-image{
+    width:100%;
+    max-width:500px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 0 30px rgba(255,0,255,0.35);
+}
+
+/* =========================
+   ネオンボタン
+========================= */
+
+button{
+
+    margin-top:20px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #ff00cc,
+    #7c4dff
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px rgba(255,0,200,0.5),
+    0 0 30px rgba(140,0,255,0.4);
+
+    transition:0.3s;
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 25px rgba(255,0,200,0.8),
+    0 0 50px rgba(140,0,255,0.8);
+}
+
+/* =========================
+   光る入力欄
+========================= */
+
+input{
+
+    width:80%;
+
+    max-width:320px;
+
+    padding:14px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:14px;
+
+    outline:none;
+
+    font-size:18px;
+
+    background:
+    rgba(255,255,255,0.15);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,0.1);
+}
+
+input:focus{
+
+    box-shadow:
+    0 0 20px #ff00cc,
+    0 0 40px #7c4dff;
+}
