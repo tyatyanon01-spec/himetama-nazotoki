@@ -325,3 +325,98 @@ input:focus{
         opacity:0;
     }
 }
+.story-image{
+
+    animation:
+    floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+/* =========================
+   ロード画面
+========================= */
+
+#loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle,
+    #220033,
+    #000000);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    animation:
+    loadingFade 2.5s forwards;
+}
+
+.loader-text{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    animation:
+    pulse 1s infinite;
+}
+
+/* 点滅 */
+
+@keyframes pulse{
+
+    0%{
+        opacity:0.3;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0.3;
+    }
+}
+
+/* 消える */
+
+@keyframes loadingFade{
+
+    0%{
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
+}
