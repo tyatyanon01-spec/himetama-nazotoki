@@ -23,3 +23,28 @@ function checkAnswer(inputId, correctAnswer, nextId) {
         alert("答えが違います！");
     }
 }
+const pages = document.querySelectorAll(".page");
+
+function showPage(id){
+
+    pages.forEach(page=>{
+        page.style.display = "none";
+    });
+
+    const target = document.getElementById(id);
+
+    if(target){
+        target.style.display = "flex";
+    }
+}
+
+window.addEventListener("load", ()=>{
+
+    const hash = location.hash.replace("#","");
+
+    if(hash){
+        showPage(hash);
+    }else{
+        showPage("opening1");
+    }
+});
