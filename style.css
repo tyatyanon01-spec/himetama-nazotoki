@@ -1,6 +1,13 @@
 body {
     margin: 0;
-    background: #000;
+
+    background:
+    radial-gradient(circle at top,
+    #a855f7 0%,
+    #6b21a8 35%,
+    #1e0033 70%,
+    #000000 100%);
+
     text-align: center;
     font-family: sans-serif;
 }
