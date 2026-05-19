@@ -79,27 +79,39 @@ content="black-translucent">
     </section>
 
 <!-- 第1問ストーリー -->
-<section class="page story-page" id="story1">
-    <img src="images/story1.png" class="story-image">
+<section id="story1" class="page">
 
-    <button onclick="nextPage('q1')" class="next-btn">
-        第1問へ
-    </button>
+<img src="images/story1.png"
+class="story-image">
+
+<button onclick="showPage('q1')">
+
+第1問へ
+
+</button>
+
 </section>
     <!-- 問題1 -->
-    <section class="page" id="q1">
-        <img src="images/q1.png" class="story-image">
+    <section id="q1" class="page">
 
-        <input type="text" id="answer1" placeholder="答えを入力">
+<img src="images/q1.png"
+class="story-image">
 
-        <button onclick="checkAnswer(
-            'answer1',
-            '足利学校',
-            '"story2"'
-        )">
-            解答
-        </button>
-    </section>
+<input type="text"
+id="answer1"
+placeholder="答えを入力">
+
+<button onclick="checkAnswer(
+'answer1',
+'足利学校',
+'story2'
+)">
+
+解答
+
+</button>
+
+</section>
 <!-- 第2問ストーリー -->
 <section class="page story-page" id="story2">
     <img src="images/story2.png" class="story-image">
@@ -110,20 +122,26 @@ content="black-translucent">
 </section>
 
     <!-- 問題2 -->
-    <section class="page" id="q2">
-        <img src="images/q2.png" class="story-image">
+   <section id="q2" class="page">
 
-        <input type="text" id="answer2" placeholder="答えを入力">
+<img src="images/q2.png"
+class="story-image">
 
-        <button onclick="checkAnswer(
-            'answer2',
-            '2',
-            'story3'
-        )">
-            解答
-        </button>
-    </section>
+<input type="text"
+id="answer2"
+placeholder="答えを入力">
 
+<button onclick="checkAnswer(
+'answer2',
+'2',
+'story3'
+)">
+
+解答
+
+</button>
+
+</section>
 <section class="page story-page" id="story3">
     <img src="images/story3.png" class="story-image">
 
@@ -132,16 +150,11 @@ content="black-translucent">
     </button>
 </section>
     <!-- 問題3 -->
-    <section class="page" id="q3">
-        <img src="images/q3.png" class="story-image">
-
-        <input type="text" id="answer3" placeholder="答えを入力">
-
-        <button onclick="checkAnswer(
-            'answer3',
-            'JSDF',
-            'story4'
-        )">
+   checkAnswer(
+'answer3',
+'JSDF',
+'story4'
+)
             解答
         </button>
     </section>
@@ -154,38 +167,15 @@ content="black-translucent">
     </button>
 </section>
     <!-- 問題4 -->
-    <section class="page" id="q4">
-        <img src="images/q4.png" class="story-image">
-
-        <input type="text" id="answer4" placeholder="答えを入力">
-
-        <button onclick="checkAnswer(
-            'answer4',
-            'おいのりします',
-            'story5'
-        )">
-            解答
-        </button>
-    </section>
-
-<section class="page story-page" id="story5">
-    <img src="images/story5.png" class="story-image">
-
-    <button onclick="nextPage('q5')" class="next-btn">
-        第5問へ
-    </button>
-</section>
-    <!-- 問題5 -->
-    <section class="page" id="q5">
-        <img src="images/q5.png" class="story-image">
-
-        <input type="text" id="answer5" placeholder="答えを入力">
-
-        <button onclick="checkAnswer(
-            'answer5',
-            'しらん',
-            'epilogue'
-        )">
+    checkAnswer(
+'answer4',
+'おいのりします',
+'story5'
+checkAnswer(
+'answer5',
+'しらん',
+'epilogue'
+)
             解答
         </button>
     </section>
@@ -199,8 +189,3 @@ content="black-translucent">
 
 </body>
 </html>
-<section id="q1">
-<section id="q2">
-<section id="q3">
-<section id="q4">
-<section id="q5">
