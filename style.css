@@ -243,3 +243,85 @@ input:focus{
     0 0 20px #ff00cc,
     0 0 40px #7c4dff;
 }
+/* =========================
+   パーティクル
+========================= */
+
+.particles{
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+.particles span{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,0.7);
+
+    box-shadow:
+    0 0 15px white;
+
+    animation:float 10s linear infinite;
+}
+
+/* 個別位置 */
+
+.particles span:nth-child(1){
+    left:10%;
+    animation-duration:8s;
+}
+
+.particles span:nth-child(2){
+    left:30%;
+    animation-duration:12s;
+}
+
+.particles span:nth-child(3){
+    left:50%;
+    animation-duration:10s;
+}
+
+.particles span:nth-child(4){
+    left:70%;
+    animation-duration:14s;
+}
+
+.particles span:nth-child(5){
+    left:90%;
+    animation-duration:9s;
+}
+
+@keyframes float{
+
+    from{
+        transform:
+        translateY(0)
+        scale(0.5);
+
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:
+        translateY(-120vh)
+        scale(1.2);
+
+        opacity:0;
+    }
+}
