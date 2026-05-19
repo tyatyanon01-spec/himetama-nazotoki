@@ -1,24 +1,63 @@
-function nextPage(nextId) {
+function showPage(id){
 
-    document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
+    const pages =
+    document.querySelectorAll(".page");
+
+    pages.forEach(page=>{
+
+        page.classList.remove("active");
+
     });
 
-    document.getElementById(nextId).classList.add('active');
+    const target =
+    document.getElementById(id);
+
+    if(target){
+
+        target.classList.add("active");
+
+    }
+
+    location.hash = id;
 }
 
-function checkAnswer(inputId, correctAnswer, nextId) {
+/* 初期表示 */
 
-    const answer = document
-        .getElementById(inputId)
-        .value
-        .trim();
+window.onload = ()=>{
+
+    const hash =
+    location.hash.replace("#","");
+
+    if(hash){
+
+        showPage(hash);
+
+    }else{
+
+        showPage("opening1");
+
+    }
+}
+
+/* 正解判定 */
+
+function checkAnswer(
+inputId,
+correctAnswer,
+nextPageId
+){
+
+    const answer =
+    document
+    .getElementById(inputId)
+    .value
+    .trim();
 
     if(answer === correctAnswer){
 
-        nextPage(nextId);
+        showPage(nextPageId);
 
-    } else {
+    }else{
 
         alert("答えが違います！");
     }
