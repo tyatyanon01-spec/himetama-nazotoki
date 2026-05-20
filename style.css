@@ -654,3 +654,14 @@ button:active::after{
     justify-content:center;
     align-items:center;
 }
+.answer-title{
+
+    font-size:48px;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 20px #ff00ff;
+
+    margin-bottom:20px;
+}

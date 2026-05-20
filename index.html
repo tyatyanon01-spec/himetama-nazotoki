@@ -108,12 +108,25 @@ placeholder="答えを入力">
 <button onclick="checkAnswer(
 'answer1',
 '足利学校',
-'story2'
+'answer1-page'
 )">
 
 解答
 
 </button>
+
+</section>
+<!-- 第1問 正解ページ -->
+<section id="answer1-page" class="page">
+
+    <img src="images/answer1.png"
+    class="story-image">
+
+    <button onclick="showPage('story2')">
+
+        次へ
+
+    </button>
 
 </section>
 <!-- 第2問ストーリー -->
@@ -143,12 +156,25 @@ placeholder="答えを入力">
 <button onclick="checkAnswer(
 'answer2',
 '2',
-'story3'
+'answer2-page'
 )">
 
 解答
 
 </button>
+
+</section>
+<!-- 第2問 正解ページ -->
+<section id="answer2-page" class="page">
+
+    <img src="images/answer2.png"
+    class="story-image">
+
+    <button onclick="showPage('story3')">
+
+        次へ
+
+    </button>
 
 </section>
 <section class="page story-page" id="story3">
@@ -171,10 +197,23 @@ placeholder="答えを入力">
     <button onclick="checkAnswer(
     'answer3',
     'JSDF',
-    'story4'
+    'answer3-page'
     )">
 
     解答
+
+    </button>
+
+</section>
+<!-- 第3問 正解ページ -->
+<section id="answer3-page" class="page">
+
+    <img src="images/answer3.png"
+    class="story-image">
+
+    <button onclick="showPage('story4')">
+
+        次へ
 
     </button>
 
@@ -200,10 +239,23 @@ placeholder="答えを入力">
     <button onclick="checkAnswer(
     'answer4',
     'おいのりします',
-    'story5'
+    'answer4-page'
     )">
 
     解答
+
+    </button>
+
+</section>
+<!-- 第4問 正解ページ -->
+<section id="answer4-page" class="page">
+
+    <img src="images/answer4.png"
+    class="story-image">
+
+    <button onclick="showPage('story5')">
+
+        次へ
 
     </button>
 
@@ -234,10 +286,23 @@ placeholder="答えを入力">
     <button onclick="checkAnswer(
     'answer5',
     'しらん',
-    'epilogue'
+   'answer5-page'
     )">
 
     解答
+
+    </button>
+
+</section>
+<!-- 第5問 正解ページ -->
+<section id="clear5" class="page">
+
+    <img src="images/clear5.png"
+    class="story-image">
+
+    <button onclick="showPage('epilogue')">
+
+        エピローグへ
 
     </button>
 
