@@ -81,10 +81,8 @@ content="width=device-width, initial-scale=1.0">
 <img src="images/story1.png"
 class="story-image">
 
-<p class="qr-text">
-
-現地のQRを読み込んでください
-
+<p class="typing"
+data-text="現地のQRを読み込んでください">
 </p>
 
 </section>
@@ -128,10 +126,8 @@ placeholder="答えを入力">
 <img src="images/story2.png"
 class="story-image">
 
-<p class="qr-text">
-
-次のQRを探してください
-
+<p class="typing"
+data-text="現地のQRを読み込んでください">
 </p>
 
 </section>
@@ -176,11 +172,9 @@ placeholder="答えを入力">
     <img src="images/story3.png"
     class="story-image">
 
-    <p class="qr-text">
-
-    次のQRを探してください
-
-    </p>
+   <p class="typing"
+data-text="現地のQRを読み込んでください">
+   </p>
 
 </section>
         
@@ -224,10 +218,8 @@ placeholder="答えを入力">
     <img src="images/story4.png"
     class="story-image">
 
-    <p class="qr-text">
-
-    次のQRを探してください
-
+    <p class="typing"
+data-text="現地のQRを読み込んでください">
     </p>
 
 </section>
@@ -270,10 +262,8 @@ placeholder="答えを入力">
 
     <img src="images/story5.png"
     class="story-image">
-　　<p class="qr-text">
-
-    現地のQRを読み込んでください
-
+　　<p class="typing"
+data-text="現地のQRを読み込んでください">
     </p>
 
 </section>
@@ -319,6 +309,28 @@ class="story-image">
 
 </section>
 
+<script src="script.js"></script>
+
+</body>
+<!-- 正解演出 -->
+
+<div id="clear-effect">
+
+    <div class="clear-text">
+
+        MISSION CLEAR
+
+    </div>
+
+</div>
+
+<!-- 効果音 -->
+
+<audio id="correct-sound"
+src="sounds/correct.mp3"></audio>
+
+<audio id="wrong-sound"
+src="sounds/wrong.mp3"></audio>
 <script src="script.js"></script>
 
 </body>
