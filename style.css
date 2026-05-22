@@ -2,9 +2,6 @@ body {
 
     margin:0;
 
-    overflow:hidden;
-
-    touch-action:none;
 
     background:
     radial-gradient(circle at top,
@@ -41,6 +38,7 @@ body {
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    padding-bottom:80px;
 }
 
 .story-image {
