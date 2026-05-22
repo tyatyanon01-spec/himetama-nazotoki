@@ -3,11 +3,6 @@ document.getElementById("correct-sound");
 
 const wrongSound =
 document.getElementById("wrong-sound");
-const correctSound =
-document.getElementById("correct-sound");
-
-const wrongSound =
-document.getElementById("wrong-sound");
 
 /* ページ切替 */
 
@@ -135,46 +130,4 @@ function typeWriter(){
 
         typing();
     });
-}
-/* タイピング */
-
-function typeWriter(){
-
-    const elements =
-    document.querySelectorAll(".typing");
-
-    elements.forEach(el=>{
-
-        const text =
-        el.dataset.text;
-
-        el.innerHTML = "";
-
-        let i = 0;
-
-        function typing(){
-
-            if(i < text.length){
-
-                el.innerHTML +=
-                text.charAt(i);
-
-                i++;
-
-                setTimeout(typing,80);
-            }
-        }
-
-        typing();
-    });
-}
-
-const originalShowPage =
-showPage;
-
-showPage = function(id){
-
-    originalShowPage(id);
-
-    setTimeout(typeWriter,100);
 }
