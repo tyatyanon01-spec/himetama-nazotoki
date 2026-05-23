@@ -174,6 +174,9 @@ window.onload = ()=>{
 
     }
 }
+document.getElementById(
+"loading-screen"
+).style.display = "none";
 
 /* =========================
    タイピング演出
@@ -248,12 +251,29 @@ function checkPasscode(){
 
 function scanQR(q){
 
-    sessionStorage.setItem(
-    "qr" + q,
-    "yes"
+function scanQR(q){
+
+    const scan =
+    document.getElementById(
+    "scan-effect"
     );
 
-    showPage("q" + q + "-lock");
+    scan.classList.add("show");
+
+    setTimeout(()=>{
+
+        scan.classList.remove("show");
+
+        sessionStorage.setItem(
+        "qr" + q,
+        "yes"
+        );
+
+        showPage(
+        "q" + q + "-lock"
+        );
+
+    },1000);
 }
 
 /* =========================
@@ -410,3 +430,41 @@ function updateProgress(){
     progressFill.style.width =
     progress + "%";
 }
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key === "Enter"){
+
+        const active =
+        document.querySelector(".page.active");
+
+        if(active.id === "login"){
+
+            checkPasscode();
+        }
+    }
+});
+document.addEventListener(
+"keydown",
+function(e){
+
+    if(e.key === "Enter"){
+
+        const active =
+        document.querySelector(
+        ".page.active input"
+        );
+
+        if(active){
+
+            const button =
+            document.querySelector(
+            ".page.active button"
+            );
+
+            if(button){
+
+                button.click();
+            }
+        }
+    }
+});
