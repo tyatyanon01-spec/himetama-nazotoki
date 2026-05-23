@@ -420,6 +420,8 @@ nextPageId
 
 function updateProgress(){
 
+    if(!progressFill) return;
+
     let progress = 0;
 
     if(sessionStorage.getItem("q1clear"))
