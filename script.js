@@ -448,3 +448,25 @@ window.addEventListener("DOMContentLoaded",()=>{
     updateProgress();
 
 });
+function goBack(){
+
+    const current =
+    location.hash.replace("#","");
+
+    const backMap = {
+        opening1: "login",
+        opening2: "opening1",
+        story1: "opening2",
+        story2: "answer1-page",
+        story3: "answer2-page",
+        story4: "answer3-page",
+        story5: "answer4-page",
+        epilogue: "answer5-page"
+    };
+
+    if(backMap[current]){
+        showPage(backMap[current]);
+    }else{
+        showPage("login");
+    }
+}
