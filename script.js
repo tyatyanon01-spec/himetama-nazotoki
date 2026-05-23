@@ -239,7 +239,8 @@ function checkPasscode(){
     .toLowerCase();
 
     if(
-    pass === correctPass
+        pass === "ひめたま" ||
+        pass === "himetama"
     ){
 
         sessionStorage.setItem(
