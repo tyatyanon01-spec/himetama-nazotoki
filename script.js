@@ -23,7 +23,7 @@ function showPage(id){
 
     if(
     id === "q2-lock" &&
-    !sessionStorage.getItem("q1clear")
+    !localStorage.getItem("q1clear")
     ){
 
         alert("Q1をクリアしてください");
@@ -32,7 +32,7 @@ function showPage(id){
 
     if(
     id === "q3-lock" &&
-    !sessionStorage.getItem("q2clear")
+    !localStorage.getItem("q2clear")
     ){
 
         alert("Q2をクリアしてください");
@@ -41,7 +41,7 @@ function showPage(id){
 
     if(
     id === "q4-lock" &&
-    !sessionStorage.getItem("q3clear")
+    !localStorage.getItem("q3clear")
     ){
 
         alert("Q3をクリアしてください");
@@ -50,7 +50,7 @@ function showPage(id){
 
     if(
     id === "q5-lock" &&
-    !sessionStorage.getItem("q4clear")
+    !localStorage.getItem("q4clear")
     ){
 
         alert("Q4をクリアしてください");
@@ -62,7 +62,7 @@ function showPage(id){
     ========================= */
 
     const started =
-    sessionStorage.getItem("started");
+    localStorage.getItem("started");
 
     if(
     (
@@ -114,17 +114,32 @@ window.addEventListener("load",()=>{
 
     updateProgress();
 
-    const hash =
-    location.hash.replace("#","");
+    const params =
+    new URLSearchParams(
+    location.search
+    );
 
-    if(hash){
+    const qr =
+    params.get("qr");
 
-        showPage(hash);
+    if(qr){
+
+        scanQR(qr);
 
     }else{
 
-        showPage("login");
+        const hash =
+        location.hash.replace("#","");
 
+        if(hash){
+
+            showPage(hash);
+
+        }else{
+
+            showPage("login");
+
+        }
     }
 
     setTimeout(()=>{
@@ -196,7 +211,7 @@ function checkPasscode(){
         pass === "himetama"
     ){
 
-        sessionStorage.setItem(
+        localStorage.setItem(
         "started",
         "yes"
         );
@@ -229,7 +244,7 @@ function scanQR(q){
 
     setTimeout(()=>{
 
-        sessionStorage.setItem(
+        localStorage.setItem(
         "qr" + q,
         "yes"
         );
@@ -263,7 +278,7 @@ nextPageId
         pass === "himetama"
     ){
 
-        sessionStorage.setItem(
+        localStorage.setItem(
         "started",
         "yes"
         );
@@ -322,7 +337,7 @@ nextPageId
 
             if(inputId === "answer1"){
 
-                sessionStorage.setItem(
+                localStorage.setItem(
                 "q1clear",
                 "yes"
                 );
@@ -330,7 +345,7 @@ nextPageId
 
             if(inputId === "answer2"){
 
-                sessionStorage.setItem(
+                localStorage.setItem(
                 "q2clear",
                 "yes"
                 );
@@ -338,7 +353,7 @@ nextPageId
 
             if(inputId === "answer3"){
 
-                sessionStorage.setItem(
+                localStorage.setItem(
                 "q3clear",
                 "yes"
                 );
@@ -346,7 +361,7 @@ nextPageId
 
             if(inputId === "answer4"){
 
-                sessionStorage.setItem(
+                localStorage.setItem(
                 "q4clear",
                 "yes"
                 );
@@ -354,7 +369,7 @@ nextPageId
 
             if(inputId === "answer5"){
 
-                sessionStorage.setItem(
+                localStorage.setItem(
                 "q5clear",
                 "yes"
                 );
@@ -384,19 +399,19 @@ function updateProgress(){
 
     let progress = 0;
 
-    if(sessionStorage.getItem("q1clear"))
+    if(localStorage.getItem("q1clear"))
     progress = 20;
 
-    if(sessionStorage.getItem("q2clear"))
+    if(localStorage.getItem("q2clear"))
     progress = 40;
 
-    if(sessionStorage.getItem("q3clear"))
+    if(localStorage.getItem("q3clear"))
     progress = 60;
 
-    if(sessionStorage.getItem("q4clear"))
+    if(localStorage.getItem("q4clear"))
     progress = 80;
 
-    if(sessionStorage.getItem("q5clear"))
+    if(localStorage.getItem("q5clear"))
     progress = 100;
 
 if(progressFill){
