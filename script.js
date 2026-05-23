@@ -98,9 +98,10 @@ function checkPasscode(){
     document
     .getElementById("passcode")
     .value
-    .trim();
+    .trim()
+    .replace(/\s/g,"");
 
-    if(pass === "ひめたま"){
+    if(pass === "ひめたまの使い"){
 
         correctSound.play();
 
@@ -128,9 +129,17 @@ nextPageId
     document
     .getElementById(inputId)
     .value
-    .trim();
+    .trim()
+    .replace(/\s/g,"")
+    .toLowerCase();
 
-    if(pass === correctPass){
+    const answer =
+    correctPass
+    .trim()
+    .replace(/\s/g,"")
+    .toLowerCase();
+
+    if(pass === answer){
 
         correctSound.play();
 
