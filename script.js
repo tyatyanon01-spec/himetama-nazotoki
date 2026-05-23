@@ -15,44 +15,8 @@ document.getElementById(
 
 function showPage(id){
 
-    /* =========================
-       QR未読チェック
-    ========================= */
 
-   
-
-    if(
-    id === "q2-lock" &&
-    !sessionStorage.getItem("qr2")
-    ){
-
-        id = "not-started";
-    }
-
-    if(
-    id === "q3-lock" &&
-    !sessionStorage.getItem("qr3")
-    ){
-
-        id = "not-started";
-    }
-
-    if(
-    id === "q4-lock" &&
-    !sessionStorage.getItem("qr4")
-    ){
-
-        id = "not-started";
-    }
-
-    if(
-    id === "q5-lock" &&
-    !sessionStorage.getItem("qr5")
-    ){
-
-        id = "not-started";
-    }
-
+    
     /* =========================
        順番飛ばし禁止
     ========================= */
