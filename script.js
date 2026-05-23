@@ -306,7 +306,8 @@ nextPageId
     .toLowerCase();
 
     if(
-    pass === correctPass
+        pass === "ひめたま" ||
+        pass === "himetama"
     ){
 
         correctSound.play();
