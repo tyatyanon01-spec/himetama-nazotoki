@@ -1,3 +1,4 @@
+"use strict";
 const correctSound =
 document.getElementById("correct-sound");
 
@@ -158,6 +159,21 @@ function showPage(id){
 
 window.addEventListener("load",()=>{
 
+    updateProgress();
+
+    const hash =
+    location.hash.replace("#","");
+
+    if(hash){
+
+        showPage(hash);
+
+    }else{
+
+        showPage("login");
+
+    }
+
     setTimeout(()=>{
 
         document.getElementById(
@@ -186,6 +202,8 @@ function typeWriter(){
         const text =
         el.dataset.text || "";
 
+        clearTimeout(el.typingTimer);
+
         el.innerHTML = "";
 
         let i = 0;
@@ -199,6 +217,7 @@ function typeWriter(){
 
                 i++;
 
+                el.typingTimer =
                 setTimeout(typing,80);
             }
         }
@@ -206,7 +225,6 @@ function typeWriter(){
         typing();
     });
 }
-
 /* =========================
    最初のログイン
 ========================= */
@@ -221,9 +239,7 @@ function checkPasscode(){
     .toLowerCase();
 
     if(
-        pass === "ひめたま" ||
-        pass === "himetama" ||
-        pass === "himetamanotukai"
+    pass === correctPass
     ){
 
         sessionStorage.setItem(
@@ -268,7 +284,7 @@ function scanQR(q){
         "q" + q + "-lock"
         );
 
-    },1000);
+    },3000);
 }
 
 /* =========================
@@ -289,8 +305,7 @@ nextPageId
     .toLowerCase();
 
     if(
-        pass === "ひめたま" ||
-        pass === "himetama"
+    pass === correctPass
     ){
 
         correctSound.play();
@@ -448,4 +463,11 @@ function(e){
 
         button.click();
     }
+});
+window.addEventListener("DOMContentLoaded",()=>{
+
+    typeWriter();
+
+    updateProgress();
+
 });
