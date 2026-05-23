@@ -19,13 +19,7 @@ function showPage(id){
        QR未読チェック
     ========================= */
 
-    if(
-    id === "q1-lock" &&
-    !sessionStorage.getItem("qr1")
-    ){
-
-        id = "not-started";
-    }
+   
 
     if(
     id === "q2-lock" &&
@@ -108,11 +102,6 @@ function showPage(id){
 
     if(
     (
-    id === "q1-lock" ||
-    id === "q2-lock" ||
-    id === "q3-lock" ||
-    id === "q4-lock" ||
-    id === "q5-lock" ||
     id === "q1" ||
     id === "q2" ||
     id === "q3" ||
