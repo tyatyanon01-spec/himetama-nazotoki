@@ -102,6 +102,7 @@ function checkPasscode(){
     .replace(/\s/g,"");
 
     if(pass === "ひめたまの使い"){
+　　　　pass === "himetamanotukai"
 
         correctSound.play();
 
@@ -125,21 +126,17 @@ correctPass,
 nextPageId
 ){
 
-    const pass =
+    let pass =
     document
     .getElementById(inputId)
     .value
     .trim()
-    .replace(/\s/g,"")
     .toLowerCase();
 
-    const answer =
-    correctPass
-    .trim()
-    .replace(/\s/g,"")
-    .toLowerCase();
+    correctPass =
+    correctPass.toLowerCase();
 
-    if(pass === answer){
+    if(pass === correctPass){
 
         correctSound.play();
 
@@ -152,7 +149,6 @@ nextPageId
         alert("認証失敗");
     }
 }
-
 /* =========================
    正解判定
 ========================= */
