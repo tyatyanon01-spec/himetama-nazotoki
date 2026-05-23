@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,17 +8,15 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-
-
 <title>ひめたま謎解き散歩</title>
 
 <link rel="stylesheet" href="style.css">
 
-
 </head>
-<body>
-<!-- QRスキャン演出 -->
 
+<body>
+
+<!-- QRスキャン演出 -->
 <div id="scan-effect">
 
     <div class="scan-line"></div>
@@ -27,26 +26,38 @@ content="width=device-width, initial-scale=1.0">
     </div>
 
 </div>
-<!-- ロード画面 -->
 
+<!-- ロード画面 -->
 <div id="loading-screen">
 
     <div class="loader-text">
-
         NOW LOADING...
-
     </div>
 
 </div>
+
+<!-- パーティクル -->
 <div class="particles">
+
     <span></span>
     <span></span>
     <span></span>
     <span></span>
     <span></span>
+
 </div>
 
-<!-- パスコード画面 -->
+<!-- 進行率バー -->
+<div id="progress-bar">
+
+    <div id="progress-fill"></div>
+
+</div>
+
+<!-- =========================
+     ログイン画面
+========================= -->
+
 <section id="login" class="page active">
 
     <h1 class="answer-title">
@@ -62,52 +73,76 @@ content="width=device-width, initial-scale=1.0">
     </button>
 
 </section>
-    <!-- オープニング -->
+
+<!-- =========================
+     未開始エラー
+========================= -->
+
+<section id="not-started" class="page">
+
+    <h1 class="answer-title">
+        ACCESS ERROR
+    </h1>
+
+    <img src="images/error.png"
+    class="story-image">
+
+    <p class="typing"
+    data-text="ひめたま本部にて謎解きがスタートできるよ">
+    </p>
+
+    <button onclick="showPage('login')">
+        戻る
+    </button>
+
+</section>
+
+<!-- =========================
+     オープニング
+========================= -->
+
 <section id="opening1" class="page">
 
     <img src="images/opening1.png"
     class="story-image">
 
     <button onclick="showPage('opening2')">
-
         次へ
-
     </button>
 
 </section>
 
-    <!-- プロローグ -->
-  <section id="opening2" class="page">
+<section id="opening2" class="page">
 
     <img src="images/opening2.png"
     class="story-image">
 
     <button onclick="showPage('story1')">
-
         次へ
-
     </button>
 
 </section>
 
-<!-- 第1問ストーリー -->
+<!-- =========================
+     STORY1
+========================= -->
+
 <section id="story1" class="page">
 
-<img src="images/story1.png"
-class="story-image">
+    <img src="images/story1.png"
+    class="story-image">
 
-<p class="typing"
-data-text="現地のQRを読み込んでください">
-</p>
+    <p class="typing"
+    data-text="現地のQRを読み込んでください">
+    </p>
 
-<button onclick="showPage('q1-lock')">
-
-    パスコード入力へ
-
-</button>
+    <button onclick="showPage('q1-lock')">
+        パスコード入力へ
+    </button>
 
 </section>
-    <!-- Q1 パスコード -->
+
+<!-- Q1 LOCK -->
 
 <section id="q1-lock" class="page">
 
@@ -115,9 +150,7 @@ data-text="現地のQRを読み込んでください">
     class="story-image">
 
     <h1 class="answer-title">
-
         ACCESS CODE
-
     </h1>
 
     <p class="typing"
@@ -130,7 +163,7 @@ data-text="現地のQRを読み込んでください">
 
     <button onclick="unlockQuestion(
     'pass1',
-    'ひめたまの使い',
+    'ひめたま',
     'q1'
     )">
 
@@ -140,58 +173,62 @@ data-text="現地のQRを読み込んでください">
 
 </section>
 
-<!-- 問題1 -->
+<!-- Q1 -->
+
 <section id="q1" class="page">
 
-<img src="images/q1.png"
-class="story-image">
+    <img src="images/q1.png"
+    class="story-image">
 
-<input type="text"
-id="answer1"
-placeholder="答えを入力">
+    <input type="text"
+    id="answer1"
+    placeholder="答えを入力">
 
-<button onclick="checkAnswer(
-'answer1',
-'足利学校',
-'answer1-page'
-)">
+    <button onclick="checkAnswer(
+    'answer1',
+    '足利学校',
+    'answer1-page'
+    )">
 
-解答
+        解答
 
-</button>
+    </button>
 
 </section>
-<!-- 第1問 正解ページ -->
+
+<!-- Q1 CLEAR -->
+
 <section id="answer1-page" class="page">
 
     <img src="images/answer1.png"
     class="story-image">
 
     <button onclick="showPage('story2')">
-
         次へ
-
     </button>
 
 </section>
-<!-- 第2問ストーリー -->
+
+<!-- =========================
+     STORY2
+========================= -->
+
 <section id="story2" class="page">
 
-<img src="images/story2.png"
-class="story-image">
+    <img src="images/story2.png"
+    class="story-image">
 
-<p class="typing"
-data-text="現地のQRを読み込んでください">
-</p>
-<button onclick="showPage('q2-lock')">
+    <p class="typing"
+    data-text="現地のQRを読み込んでください">
+    </p>
 
-    パスコード入力へ
+    <button onclick="showPage('q2-lock')">
+        パスコード入力へ
+    </button>
 
-</button>
 </section>
-<!-- Q2 パスコード -->
 
-<!-- Q2 パスコード -->
+<!-- Q2 LOCK -->
 
 <section id="q2-lock" class="page">
 
@@ -199,9 +236,7 @@ data-text="現地のQRを読み込んでください">
     class="story-image">
 
     <h1 class="answer-title">
-
         ACCESS CODE
-
     </h1>
 
     <p class="typing"
@@ -214,7 +249,7 @@ data-text="現地のQRを読み込んでください">
 
     <button onclick="unlockQuestion(
     'pass2',
-    'ひめたまの使い',
+    'ひめたま',
     'q2'
     )">
 
@@ -223,41 +258,47 @@ data-text="現地のQRを読み込んでください">
     </button>
 
 </section>
-    <!-- 問題2 -->
-   <section id="q2" class="page">
 
-<img src="images/q2.png"
-class="story-image">
+<!-- Q2 -->
 
-<input type="text"
-id="answer2"
-placeholder="答えを入力">
+<section id="q2" class="page">
 
-<button onclick="checkAnswer(
-'answer2',
-'2',
-'answer2-page'
-)">
+    <img src="images/q2.png"
+    class="story-image">
 
-解答
+    <input type="text"
+    id="answer2"
+    placeholder="答えを入力">
 
-</button>
+    <button onclick="checkAnswer(
+    'answer2',
+    '2',
+    'answer2-page'
+    )">
+
+        解答
+
+    </button>
 
 </section>
-<!-- 第2問 正解ページ -->
+
+<!-- Q2 CLEAR -->
+
 <section id="answer2-page" class="page">
 
     <img src="images/answer2.png"
     class="story-image">
 
     <button onclick="showPage('story3')">
-
         次へ
-
     </button>
 
 </section>
-<!-- 第3問ストーリー -->
+
+<!-- =========================
+     STORY3
+========================= -->
+
 <section id="story3" class="page">
 
     <img src="images/story3.png"
@@ -268,15 +309,12 @@ placeholder="答えを入力">
     </p>
 
     <button onclick="showPage('q3-lock')">
-
         パスコード入力へ
-
     </button>
 
 </section>
-   <!-- Q3 パスコード -->
 
-<!-- Q3 パスコード -->
+<!-- Q3 LOCK -->
 
 <section id="q3-lock" class="page">
 
@@ -284,9 +322,7 @@ placeholder="答えを入力">
     class="story-image">
 
     <h1 class="answer-title">
-
         ACCESS CODE
-
     </h1>
 
     <p class="typing"
@@ -299,7 +335,7 @@ placeholder="答えを入力">
 
     <button onclick="unlockQuestion(
     'pass3',
-    'ひめたまの使い',
+    'ひめたま',
     'q3'
     )">
 
@@ -307,8 +343,10 @@ placeholder="答えを入力">
 
     </button>
 
-</section>  
-   <!-- 問題3 -->
+</section>
+
+<!-- Q3 -->
+
 <section id="q3" class="page">
 
     <img src="images/q3.png"
@@ -324,25 +362,29 @@ placeholder="答えを入力">
     'answer3-page'
     )">
 
-    解答
+        解答
 
     </button>
 
 </section>
-<!-- 第3問 正解ページ -->
+
+<!-- Q3 CLEAR -->
+
 <section id="answer3-page" class="page">
 
     <img src="images/answer3.png"
     class="story-image">
 
     <button onclick="showPage('story4')">
-
         次へ
-
     </button>
 
 </section>
-<!-- 第4問ストーリー -->
+
+<!-- =========================
+     STORY4
+========================= -->
+
 <section id="story4" class="page">
 
     <img src="images/story4.png"
@@ -353,15 +395,12 @@ placeholder="答えを入力">
     </p>
 
     <button onclick="showPage('q4-lock')">
-
         パスコード入力へ
-
     </button>
 
 </section>
-<!-- Q4 パスコード -->
 
-<!-- Q4 パスコード -->
+<!-- Q4 LOCK -->
 
 <section id="q4-lock" class="page">
 
@@ -369,9 +408,7 @@ placeholder="答えを入力">
     class="story-image">
 
     <h1 class="answer-title">
-
         ACCESS CODE
-
     </h1>
 
     <p class="typing"
@@ -384,7 +421,7 @@ placeholder="答えを入力">
 
     <button onclick="unlockQuestion(
     'pass4',
-    'ひめたまの使い',
+    'ひめたま',
     'q4'
     )">
 
@@ -393,7 +430,9 @@ placeholder="答えを入力">
     </button>
 
 </section>
-    <!-- 問題4 -->
+
+<!-- Q4 -->
+
 <section id="q4" class="page">
 
     <img src="images/q4.png"
@@ -409,25 +448,29 @@ placeholder="答えを入力">
     'answer4-page'
     )">
 
-    解答
+        解答
 
     </button>
 
 </section>
-<!-- 第4問 正解ページ -->
+
+<!-- Q4 CLEAR -->
+
 <section id="answer4-page" class="page">
 
     <img src="images/answer4.png"
     class="story-image">
 
     <button onclick="showPage('story5')">
-
         次へ
-
     </button>
 
 </section>
-<!-- 第5問ストーリー -->
+
+<!-- =========================
+     STORY5
+========================= -->
+
 <section id="story5" class="page">
 
     <img src="images/story5.png"
@@ -438,15 +481,12 @@ placeholder="答えを入力">
     </p>
 
     <button onclick="showPage('q5-lock')">
-
         パスコード入力へ
-
     </button>
 
 </section>
-<!-- Q5 パスコード -->
 
-<!-- Q5 パスコード -->
+<!-- Q5 LOCK -->
 
 <section id="q5-lock" class="page">
 
@@ -454,9 +494,7 @@ placeholder="答えを入力">
     class="story-image">
 
     <h1 class="answer-title">
-
         ACCESS CODE
-
     </h1>
 
     <p class="typing"
@@ -469,7 +507,7 @@ placeholder="答えを入力">
 
     <button onclick="unlockQuestion(
     'pass5',
-    'ひめたまの使い',
+    'ひめたま',
     'q5'
     )">
 
@@ -478,7 +516,9 @@ placeholder="答えを入力">
     </button>
 
 </section>
-<!-- 問題5 -->
+
+<!-- Q5 -->
+
 <section id="q5" class="page">
 
     <img src="images/q5.png"
@@ -491,52 +531,32 @@ placeholder="答えを入力">
     <button onclick="checkAnswer(
     'answer5',
     'しらん',
-   'answer5-page'
+    'answer5-page'
     )">
 
-    解答
+        解答
 
     </button>
 
 </section>
-<!-- 第5問 正解ページ -->
+
+<!-- Q5 CLEAR -->
+
 <section id="answer5-page" class="page">
 
     <img src="images/answer5.png"
-class="story-image">
-   
-    <button onclick="showPage('epilogue')">
-
-        エピローグへ
-
-    </button>
-
-</section>
-<!-- 未開始エラー -->
-
-<section id="not-started" class="page">
-
-    <h1 class="answer-title">
-
-        ACCESS ERROR
-
-    </h1>
-
-    <img src="images/error.png"
     class="story-image">
 
-    <p class="typing"
-    data-text="ひめたま本部にて謎解きがスタートできるよ">
-    </p>
-
-    <button onclick="showPage('login')">
-
-        戻る
-
+    <button onclick="showPage('epilogue')">
+        エピローグへ
     </button>
 
 </section>
-<!-- エピローグ -->
+
+<!-- =========================
+     エピローグ
+========================= -->
+
 <section id="epilogue" class="page">
 
     <img src="images/epilogue.png"
@@ -544,15 +564,14 @@ class="story-image">
 
 </section>
 
-
-<!-- 正解演出 -->
+<!-- =========================
+     CLEAR演出
+========================= -->
 
 <div id="clear-effect">
 
     <div class="clear-text">
-
         MISSION CLEAR
-
     </div>
 
 </div>
@@ -564,16 +583,11 @@ src="sounds/correct.mp3"></audio>
 
 <audio id="wrong-sound"
 src="sounds/wrong.mp3"></audio>
+
+<!-- JS -->
+
 <script src="script.js"></script>
-<!-- 進行率バー -->
-
-<div id="progress-bar">
-
-    <div id="progress-fill"></div>
-
-</div>
 
 </body>
-
 
 </html>
