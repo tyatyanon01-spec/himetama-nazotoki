@@ -46,9 +46,28 @@ content="width=device-width, initial-scale=1.0">
     <span></span>
     <span></span>
 </div>
+<!-- パスコード画面 -->
+<section id="login" class="page active">
 
+    <h1 class="answer-title">
+
+        ACCESS CODE
+
+    </h1>
+
+    <input type="password"
+    id="passcode"
+    placeholder="パスコードを入力">
+
+    <button onclick="checkPasscode()">
+
+        ENTER
+
+    </button>
+
+</section>
     <!-- オープニング -->
-<section id="opening1" class="page active">
+<section id="opening1" class="page">
 
     <img src="images/opening1.png"
     class="story-image">
@@ -87,7 +106,32 @@ data-text="現地のQRを読み込んでください">
 
 </section>
     <!-- 問題1 -->
-    <section id="q1" class="page">
+    <section id="q1-lock" class="page">
+
+    <h1 class="answer-title">
+
+        ACCESS CODE
+
+    </h1>
+
+    <input type="password"
+    id="pass1"
+    placeholder="パスコードを入力">
+
+    <button onclick="unlockQuestion(
+    'pass1',
+    'ひめたまの使い',
+    'q1'
+    )">
+
+        ENTER
+
+    </button>
+
+</section>
+
+<!-- 問題1 -->
+<section id="q1" class="page">
 
 <img src="images/q1.png"
 class="story-image">
@@ -129,9 +173,37 @@ class="story-image">
 <p class="typing"
 data-text="現地のQRを読み込んでください">
 </p>
+<button onclick="showPage('q2-lock')">
+
+    パスコード入力へ
+
+</button>
+</section>
+<!-- Q2 パスコード -->
+
+<section id="q2-lock" class="page">
+
+    <h1 class="answer-title">
+
+        ACCESS CODE
+
+    </h1>
+
+    <input type="password"
+    id="pass2"
+    placeholder="パスコードを入力">
+
+    <button onclick="unlockQuestion(
+    'pass2',
+    'ひめたまの使い',
+    'q2'
+    )">
+
+        ENTER
+
+    </button>
 
 </section>
-
     <!-- 問題2 -->
    <section id="q2" class="page">
 
@@ -172,12 +244,42 @@ placeholder="答えを入力">
     <img src="images/story3.png"
     class="story-image">
 
-   <p class="typing"
-data-text="現地のQRを読み込んでください">
-   </p>
+    <p class="typing"
+    data-text="現地のQRを読み込んでください">
+    </p>
+
+    <button onclick="showPage('q3-lock')">
+
+        パスコード入力へ
+
+    </button>
 
 </section>
-        
+   <!-- Q3 パスコード -->
+
+<section id="q3-lock" class="page">
+
+    <h1 class="answer-title">
+
+        ACCESS CODE
+
+    </h1>
+
+    <input type="password"
+    id="pass3"
+    placeholder="パスコードを入力">
+
+    <button onclick="unlockQuestion(
+    'pass3',
+    'ひめたまの使い',
+    'q3'
+    )">
+
+        ENTER
+
+    </button>
+
+</section>     
    <!-- 問題3 -->
 <section id="q3" class="page">
 
@@ -219,8 +321,39 @@ data-text="現地のQRを読み込んでください">
     class="story-image">
 
     <p class="typing"
-data-text="現地のQRを読み込んでください">
+    data-text="現地のQRを読み込んでください">
     </p>
+
+    <button onclick="showPage('q4-lock')">
+
+        パスコード入力へ
+
+    </button>
+
+</section>
+<!-- Q4 パスコード -->
+
+<section id="q4-lock" class="page">
+
+    <h1 class="answer-title">
+
+        ACCESS CODE
+
+    </h1>
+
+    <input type="password"
+    id="pass4"
+    placeholder="パスコードを入力">
+
+    <button onclick="unlockQuestion(
+    'pass4',
+    'ひめたまの使い',
+    'q4'
+    )">
+
+        ENTER
+
+    </button>
 
 </section>
     <!-- 問題4 -->
@@ -260,12 +393,43 @@ data-text="現地のQRを読み込んでください">
 <!-- 第5問ストーリー -->
 <section id="story5" class="page">
 
-<img src="images/story5.png"
-class="story-image">
+    <img src="images/story5.png"
+    class="story-image">
 
-<p class="typing"
-data-text="現地のQRを読み込んでください">
+    <p class="typing"
+    data-text="現地のQRを読み込んでください">
     </p>
+
+    <button onclick="showPage('q5-lock')">
+
+        パスコード入力へ
+
+    </button>
+
+</section>
+<!-- Q5 パスコード -->
+
+<section id="q5-lock" class="page">
+
+    <h1 class="answer-title">
+
+        ACCESS CODE
+
+    </h1>
+
+    <input type="password"
+    id="pass5"
+    placeholder="パスコードを入力">
+
+    <button onclick="unlockQuestion(
+    'pass5',
+    'ひめたまの使い',
+    'q5'
+    )">
+
+        ENTER
+
+    </button>
 
 </section>
 <!-- 問題5 -->

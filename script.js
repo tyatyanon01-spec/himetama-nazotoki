@@ -131,3 +131,49 @@ function typeWriter(){
         typing();
     });
 }
+/* 問題解除 */
+
+function unlockQuestion(
+inputId,
+correctPass,
+nextPage
+){
+
+    const pass =
+    document
+    .getElementById(inputId)
+    .value
+    .trim();
+
+    if(pass === correctPass){
+
+        correctSound.play();
+
+        showPage(nextPage);
+
+    }else{
+
+        wrongSound.play();
+
+        alert("パスコードが違います");
+    }
+}
+/* パスコード */
+
+function checkPasscode(){
+
+    const pass =
+    document
+    .getElementById("passcode")
+    .value
+    .trim();
+
+    if(pass === "ひめたまの使い"){
+
+        showPage("opening1");
+
+    }else{
+
+        alert("ACCESS DENIED");
+    }
+}
