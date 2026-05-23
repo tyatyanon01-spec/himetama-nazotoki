@@ -762,3 +762,18 @@ button:active::after{
 
     line-height:1.8;
 }
+.answer-title{
+
+    font-size:42px;
+
+    color:#00ffe5;
+
+    text-shadow:
+    0 0 10px #00ffe5,
+    0 0 20px #00ffe5,
+    0 0 40px #00ffe5;
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+}
