@@ -127,17 +127,17 @@ correctPass,
 nextPageId
 ){
 
-    let pass =
+    const pass =
     document
     .getElementById(inputId)
     .value
     .trim()
     .toLowerCase();
 
-    correctPass =
-    correctPass.toLowerCase();
-
-    if(pass === correctPass){
+    if(
+        pass === "ひめたま" ||
+        pass === "himetama"
+    ){
 
         correctSound.play();
 
