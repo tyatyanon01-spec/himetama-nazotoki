@@ -4,6 +4,8 @@
 
 body{
 
+    min-height:100vh;
+    margin:0;
     overflow-x:hidden;
     overflow-y:auto;
 
@@ -72,10 +74,14 @@ body::before{
 ========================= */
 
 .page{
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+
+    border-radius:24px;
 
     display:none;
 
-    min-height:100dvh;
+    min-height:calc(100dvh - 40px);
 
     padding:20px;
 
@@ -93,8 +99,7 @@ body::before{
     background:
     rgba(255,255,255,0.08);
 
-    backdrop-filter:blur(4px);
-
+    
     border:
     1px solid rgba(255,255,255,0.12);
 }
@@ -122,6 +127,8 @@ body::before{
 ========================= */
 
 .story-image{
+
+    height:auto;
  display:block;
     width:100%;
 
@@ -157,6 +164,9 @@ body::before{
 
 input{
 
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
     width:80%;
 
     max-width:320px;
@@ -176,8 +186,7 @@ input{
     background:
     rgba(255,255,255,0.15);
 
-    backdrop-filter:blur(10px);
-
+    
     box-shadow:
     0 0 15px rgba(255,255,255,0.1);
 
@@ -722,4 +731,22 @@ button:active::after{
 
         font-size:16px;
     }
+}
+.page.active{
+    display:flex;
+}
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+html,body{
+    width:100%;
 }

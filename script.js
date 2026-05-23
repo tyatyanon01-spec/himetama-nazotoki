@@ -8,7 +8,6 @@ const progressFill =
 document.getElementById(
 "progress-fill"
 );
-
 /* =========================
    ページ切替
 ========================= */
@@ -157,40 +156,35 @@ function showPage(id){
    初期表示
 ========================= */
 
-window.onload = ()=>{
+window.addEventListener("load",()=>{
 
-    updateProgress();
+    setTimeout(()=>{
 
-    const hash =
-    location.hash.replace("#","");
+        document.getElementById(
+        "loading-screen"
+        ).style.display = "none";
 
-    if(hash){
+    },2500);
 
-        showPage(hash);
-
-    }else{
-
-        showPage("login");
-
-    }
-}
-document.getElementById(
-"loading-screen"
-).style.display = "none";
-
+});
 /* =========================
    タイピング演出
 ========================= */
 
 function typeWriter(){
 
+    const activePage =
+    document.querySelector(".page.active");
+
+    if(!activePage) return;
+
     const elements =
-    document.querySelectorAll(".typing");
+    activePage.querySelectorAll(".typing");
 
     elements.forEach(el=>{
 
         const text =
-        el.dataset.text;
+        el.dataset.text || "";
 
         el.innerHTML = "";
 
@@ -249,7 +243,6 @@ function checkPasscode(){
    QRスキャン
 ========================= */
 
-function scanQR(q){
 
 function scanQR(q){
 
@@ -258,11 +251,13 @@ function scanQR(q){
     "scan-effect"
     );
 
+    scan.classList.remove("show");
+
+    void scan.offsetWidth;
+
     scan.classList.add("show");
 
     setTimeout(()=>{
-
-        scan.classList.remove("show");
 
         sessionStorage.setItem(
         "qr" + q,
@@ -427,44 +422,30 @@ function updateProgress(){
     if(sessionStorage.getItem("q5clear"))
     progress = 100;
 
+if(progressFill){
+
     progressFill.style.width =
     progress + "%";
 }
-document.addEventListener("keydown",(e)=>{
+}
 
-    if(e.key === "Enter"){
 
-        const active =
-        document.querySelector(".page.active");
-
-        if(active.id === "login"){
-
-            checkPasscode();
-        }
-    }
-});
 document.addEventListener(
 "keydown",
 function(e){
 
-    if(e.key === "Enter"){
+    if(e.key !== "Enter") return;
 
-        const active =
-        document.querySelector(
-        ".page.active input"
-        );
+    const activePage =
+    document.querySelector(".page.active");
 
-        if(active){
+    if(!activePage) return;
 
-            const button =
-            document.querySelector(
-            ".page.active button"
-            );
+    const button =
+    activePage.querySelector("button");
 
-            if(button){
+    if(button){
 
-                button.click();
-            }
-        }
+        button.click();
     }
 });
