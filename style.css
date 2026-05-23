@@ -1,7 +1,7 @@
-body {
 
+    body{
     margin:0;
-
+    overflow-x:hidden;
 
     background:
     radial-gradient(circle at top,
@@ -11,22 +11,8 @@ body {
     #000000 100%);
 
     text-align:center;
-
     font-family:sans-serif;
-
     color:white;
-}
-    margin: 0;
-
-    background:
-    radial-gradient(circle at top,
-    #a855f7 0%,
-    #6b21a8 35%,
-    #1e0033 70%,
-    #000000 100%);
-
-    text-align: center;
-    font-family: sans-serif;
 }
 
 .page{
@@ -64,9 +50,6 @@ body {
     align-items:center;
 
     min-height:100vh;
-
-    padding:
-    40px 20px 100px;
 
     box-sizing:border-box;
 
@@ -153,12 +136,6 @@ body::before{
    ページフェード
 ========================= */
 
-.page{
-    display:none;
-
-    animation:fade 0.6s ease;
-}
-
 
 
 @keyframes fade{
@@ -178,23 +155,7 @@ body::before{
    ガラスUI
 ========================= */
 
-.page{
 
-    background:rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,0.15);
-
-    border-radius:24px;
-
-    margin:20px;
-
-    padding:20px;
-
-    box-shadow:
-    0 0 30px rgba(255,0,255,0.15);
-}
 
 /* =========================
    画像
@@ -671,9 +632,6 @@ button:active::after{
     max-width:700px;
     border-radius:20px;
     box-shadow:0 0 40px rgba(255,255,255,0.3);
-}
-.page{
-    display:none;
 }
 
 

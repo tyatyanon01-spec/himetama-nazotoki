@@ -4,7 +4,9 @@ document.getElementById("correct-sound");
 const wrongSound =
 document.getElementById("wrong-sound");
 
-/* ページ切替 */
+/* =========================
+   ページ切替
+========================= */
 
 function showPage(id){
 
@@ -31,7 +33,9 @@ function showPage(id){
     setTimeout(typeWriter,100);
 }
 
-/* 初期表示 */
+/* =========================
+   初期表示
+========================= */
 
 window.onload = ()=>{
 
@@ -44,62 +48,14 @@ window.onload = ()=>{
 
     }else{
 
-        showPage("opening1");
+        showPage("login");
 
     }
 }
 
-/* 正解判定 */
-
-function checkAnswer(
-inputId,
-correctAnswer,
-nextPageId
-){
-
-    const answer =
-    document
-    .getElementById(inputId)
-    .value
-    .trim();
-
-    if(answer === correctAnswer){
-
-        /* 正解SE */
-        correctSound.play();
-
-        /* スマホ振動 */
-        if(navigator.vibrate){
-
-            navigator.vibrate(200);
-        }
-
-        /* 正解演出 */
-
-        const clear =
-        document.getElementById(
-        "clear-effect"
-        );
-
-        clear.classList.add("show");
-
-        setTimeout(()=>{
-
-            clear.classList.remove("show");
-
-            showPage(nextPageId);
-
-        },1500);
-
-    }else{
-
-        wrongSound.play();
-
-        alert("答えが違います！");
-    }
-}
-
-/* タイピング演出 */
+/* =========================
+   タイピング演出
+========================= */
 
 function typeWriter(){
 
@@ -131,12 +87,41 @@ function typeWriter(){
         typing();
     });
 }
-/* 問題解除 */
+
+/* =========================
+   最初のログイン
+========================= */
+
+function checkPasscode(){
+
+    const pass =
+    document
+    .getElementById("passcode")
+    .value
+    .trim();
+
+    if(pass === "ひめたま"){
+
+        correctSound.play();
+
+        showPage("opening1");
+
+    }else{
+
+        wrongSound.play();
+
+        alert("パスコードが違います！");
+    }
+}
+
+/* =========================
+   問題ロック解除
+========================= */
 
 function unlockQuestion(
 inputId,
 correctPass,
-nextPage
+nextPageId
 ){
 
     const pass =
@@ -149,31 +134,60 @@ nextPage
 
         correctSound.play();
 
-        showPage(nextPage);
+        showPage(nextPageId);
 
     }else{
 
         wrongSound.play();
 
-        alert("パスコードが違います");
+        alert("認証失敗");
     }
 }
-/* パスコード */
 
-function checkPasscode(){
+/* =========================
+   正解判定
+========================= */
 
-    const pass =
+function checkAnswer(
+inputId,
+correctAnswer,
+nextPageId
+){
+
+    const answer =
     document
-    .getElementById("passcode")
+    .getElementById(inputId)
     .value
     .trim();
 
-    if(pass === "ひめたまの使い"){
+    if(answer === correctAnswer){
 
-        showPage("opening1");
+        correctSound.play();
+
+        if(navigator.vibrate){
+
+            navigator.vibrate(200);
+        }
+
+        const clear =
+        document.getElementById(
+        "clear-effect"
+        );
+
+        clear.classList.add("show");
+
+        setTimeout(()=>{
+
+            clear.classList.remove("show");
+
+            showPage(nextPageId);
+
+        },1500);
 
     }else{
 
-        alert("ACCESS DENIED");
+        wrongSound.play();
+
+        alert("答えが違います！");
     }
 }
