@@ -119,23 +119,40 @@ content="width=device-width, initial-scale=1.0">
 
 <section id="opening1" class="page">
 
-    <img src="images/opening1.png"
+    <div class="top-nav">
+
+        <span></span>
+
+        <button onclick="showPage('opening2')">
+            次へ ▶
+        </button>
+
+    </div>
+
+    <img
+    src="images/opening1.png"
     class="story-image"
     alt="オープニング1">
-    <button onclick="showPage('opening2')">
-        次へ
-    </button>
 
 </section>
-
 <section id="opening2" class="page">
 
-    <img src="images/opening2.png"
+    <div class="top-nav">
+
+        <button onclick="goBack()">
+            ◀ 戻る
+        </button>
+
+        <button onclick="showPage('story1')">
+            次へ ▶
+        </button>
+
+    </div>
+
+    <img
+    src="images/opening2.png"
     class="story-image"
     alt="オープニング2">
-    <button onclick="showPage('story1')">
-        次へ
-    </button>
 
 </section>
 
@@ -145,14 +162,21 @@ content="width=device-width, initial-scale=1.0">
 
 <section id="story1" class="page">
 
+    <div class="top-nav">
+
+        <button onclick="goBack()">
+            ◀ 戻る
+        </button>
+
+    </div>
+
     <img src="images/story1.png"
     class="story-image"
     alt="ストーリー1">
+
     <p class="typing"
     data-text="現地のQRを読み込んでください">
     </p>
-
-    
 
 </section>
 
@@ -215,21 +239,37 @@ content="width=device-width, initial-scale=1.0">
 
 <section id="answer1-page" class="page">
 
-    <img src="images/answer1.png"
+    <div class="top-nav">
+
+        <button onclick="goBack()">
+            ◀ 戻る
+        </button>
+
+        <button onclick="showPage('story2')">
+            次へ ▶
+        </button>
+
+    </div>
+
+    <img
+    src="images/answer1.png"
     class="story-image"
     alt="Q1クリア">
-    <button onclick="showPage('story2')">
-        次へ
-    </button>
 
 </section>
-
 <!-- =========================
      STORY2
 ========================= -->
 
 <section id="story2" class="page">
 
+   <div class="top-nav">
+
+    <button onclick="goBack()">
+        ◀ 戻る
+    </button>
+
+</div>
     <img src="images/story2.png"
     class="story-image"
     alt="ストーリー2">
@@ -296,15 +336,23 @@ content="width=device-width, initial-scale=1.0">
 </section>
 
 <!-- Q2 CLEAR -->
-
 <section id="answer2-page" class="page">
+
+    <div class="top-nav">
+
+        <button onclick="goBack()">
+            ◀ 戻る
+        </button>
+
+        <button onclick="showPage('story3')">
+            次へ ▶
+        </button>
+
+    </div>
 
     <img src="images/answer2.png"
     class="story-image"
     alt="Q2クリア">
-    <button onclick="showPage('story3')">
-        次へ
-    </button>
 
 </section>
 
@@ -313,7 +361,13 @@ content="width=device-width, initial-scale=1.0">
 ========================= -->
 
 <section id="story3" class="page">
+    <div class="top-nav">
 
+    <button onclick="goBack()">
+        ◀ 戻る
+    </button>
+
+</div>
     <img src="images/story3.png"
     class="story-image"
     alt="ストーリー3">
@@ -383,12 +437,21 @@ content="width=device-width, initial-scale=1.0">
 
 <section id="answer3-page" class="page">
 
+    <div class="top-nav">
+
+        <button onclick="goBack()">
+            ◀ 戻る
+        </button>
+
+        <button onclick="showPage('story4')">
+            次へ ▶
+        </button>
+
+    </div>
+
     <img src="images/answer3.png"
     class="story-image"
     alt="Q3クリア">
-    <button onclick="showPage('story4')">
-        次へ
-    </button>
 
 </section>
 
@@ -397,7 +460,13 @@ content="width=device-width, initial-scale=1.0">
 ========================= -->
 
 <section id="story4" class="page">
+   <div class="top-nav">
 
+    <button onclick="goBack()">
+        ◀ 戻る
+    </button>
+
+</div>
     <img src="images/story4.png"
     class="story-image"
     alt="ストーリー4">
@@ -467,12 +536,21 @@ content="width=device-width, initial-scale=1.0">
 
 <section id="answer4-page" class="page">
 
+    <div class="top-nav">
+
+        <button onclick="goBack()">
+            ◀ 戻る
+        </button>
+
+        <button onclick="showPage('story5')">
+            次へ ▶
+        </button>
+
+    </div>
+
     <img src="images/answer4.png"
     class="story-image"
     alt="Q4クリア">
-    <button onclick="showPage('story5')">
-        次へ
-    </button>
 
 </section>
 
@@ -481,7 +559,13 @@ content="width=device-width, initial-scale=1.0">
 ========================= -->
 
 <section id="story5" class="page">
+   <div class="top-nav">
 
+    <button onclick="goBack()">
+        ◀ 戻る
+    </button>
+
+</div>
     <img src="images/story5.png"
     class="story-image"
     alt="ストーリー5">
@@ -548,15 +632,23 @@ content="width=device-width, initial-scale=1.0">
 </section>
 
 <!-- Q5 CLEAR -->
-
 <section id="answer5-page" class="page">
+
+    <div class="top-nav">
+
+        <button onclick="goBack()">
+            ◀ 戻る
+        </button>
+
+        <button onclick="showPage('epilogue')">
+            次へ ▶
+        </button>
+
+    </div>
 
     <img src="images/answer5.png"
     class="story-image"
     alt="Q5クリア">
-    <button onclick="showPage('epilogue')">
-        エピローグへ
-    </button>
 
 </section>
 
