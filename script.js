@@ -299,11 +299,10 @@ nextPageId
         pass === "himetama"
     ){
 
-        correctSound.play();
-
-        showPage(nextPageId);
-
-    }else{
+    sessionStorage.setItem(
+    "started",
+    "yes"
+    );
 
         wrongSound.play();
 
