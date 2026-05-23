@@ -81,7 +81,8 @@ body::before{
 
     display:none;
 
-    min-height:calc(100dvh - 40px);
+      min-height:100dvh;
+    box-sizing:border-box;
 
     padding:20px;
 
@@ -133,6 +134,9 @@ body::before{
     width:100%;
 
     max-width:700px;
+
+    max-height:70vh;
+    object-fit:contain;
 
     border-radius:20px;
 
@@ -749,4 +753,21 @@ button:active::after{
 }
 html,body{
     width:100%;
+}
+*{
+    box-sizing:border-box;
+}
+/* スタート画像 */
+
+.start-image{
+
+    width: 85%;
+    max-width: 420px;
+
+    margin-bottom: 20px;
+
+    border-radius: 16px;
+
+    box-shadow:
+    0 0 25px rgba(0,255,255,0.4);
 }
