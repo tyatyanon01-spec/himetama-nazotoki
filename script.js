@@ -99,18 +99,19 @@ function checkPasscode(){
     .getElementById("passcode")
     .value
     .trim()
-    .replace(/\s/g,"");
+    .toLowerCase();
 
-    if(pass === "ひめたまの使い"){
-　　　　pass === "himetamanotukai"
-
-        correctSound.play();
+    if(
+        pass === "ひめたま" ||
+        pass === "ヒメタマ" ||
+        pass === "himetama" ||
+        pass === "ひめたまの使い" ||
+        pass === "himetamanotukai"
+    ){
 
         showPage("opening1");
 
     }else{
-
-        wrongSound.play();
 
         alert("パスコードが違います！");
     }
