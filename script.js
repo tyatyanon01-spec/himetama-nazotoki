@@ -4,11 +4,131 @@ document.getElementById("correct-sound");
 const wrongSound =
 document.getElementById("wrong-sound");
 
+const progressFill =
+document.getElementById(
+"progress-fill"
+);
+
 /* =========================
    ページ切替
 ========================= */
 
 function showPage(id){
+
+    /* =========================
+       QR未読チェック
+    ========================= */
+
+    if(
+    id === "q1-lock" &&
+    !sessionStorage.getItem("qr1")
+    ){
+
+        id = "not-started";
+    }
+
+    if(
+    id === "q2-lock" &&
+    !sessionStorage.getItem("qr2")
+    ){
+
+        id = "not-started";
+    }
+
+    if(
+    id === "q3-lock" &&
+    !sessionStorage.getItem("qr3")
+    ){
+
+        id = "not-started";
+    }
+
+    if(
+    id === "q4-lock" &&
+    !sessionStorage.getItem("qr4")
+    ){
+
+        id = "not-started";
+    }
+
+    if(
+    id === "q5-lock" &&
+    !sessionStorage.getItem("qr5")
+    ){
+
+        id = "not-started";
+    }
+
+    /* =========================
+       順番飛ばし禁止
+    ========================= */
+
+    if(
+    id === "q2-lock" &&
+    !sessionStorage.getItem("q1clear")
+    ){
+
+        alert("Q1をクリアしてください");
+        return;
+    }
+
+    if(
+    id === "q3-lock" &&
+    !sessionStorage.getItem("q2clear")
+    ){
+
+        alert("Q2をクリアしてください");
+        return;
+    }
+
+    if(
+    id === "q4-lock" &&
+    !sessionStorage.getItem("q3clear")
+    ){
+
+        alert("Q3をクリアしてください");
+        return;
+    }
+
+    if(
+    id === "q5-lock" &&
+    !sessionStorage.getItem("q4clear")
+    ){
+
+        alert("Q4をクリアしてください");
+        return;
+    }
+
+    /* =========================
+       スタートチェック
+    ========================= */
+
+    const started =
+    sessionStorage.getItem("started");
+
+    if(
+    (
+    id === "q1-lock" ||
+    id === "q2-lock" ||
+    id === "q3-lock" ||
+    id === "q4-lock" ||
+    id === "q5-lock" ||
+    id === "q1" ||
+    id === "q2" ||
+    id === "q3" ||
+    id === "q4" ||
+    id === "q5"
+    )
+    &&
+    !started
+    ){
+
+        id = "not-started";
+    }
+
+    /* =========================
+       ページ表示
+    ========================= */
 
     const pages =
     document.querySelectorAll(".page");
@@ -38,6 +158,8 @@ function showPage(id){
 ========================= */
 
 window.onload = ()=>{
+
+    updateProgress();
 
     const hash =
     location.hash.replace("#","");
@@ -103,11 +225,14 @@ function checkPasscode(){
 
     if(
         pass === "ひめたま" ||
-        pass === "ヒメタマ" ||
         pass === "himetama" ||
-        pass === "ひめたまの使い" ||
         pass === "himetamanotukai"
     ){
+
+        sessionStorage.setItem(
+        "started",
+        "yes"
+        );
 
         showPage("opening1");
 
@@ -115,6 +240,20 @@ function checkPasscode(){
 
         alert("パスコードが違います！");
     }
+}
+
+/* =========================
+   QRスキャン
+========================= */
+
+function scanQR(q){
+
+    sessionStorage.setItem(
+    "qr" + q,
+    "yes"
+    );
+
+    showPage("q" + q + "-lock");
 }
 
 /* =========================
@@ -150,6 +289,7 @@ nextPageId
         alert("認証失敗");
     }
 }
+
 /* =========================
    正解判定
 ========================= */
@@ -186,6 +326,52 @@ nextPageId
 
             clear.classList.remove("show");
 
+            /* =========================
+               クリア保存
+            ========================= */
+
+            if(inputId === "answer1"){
+
+                sessionStorage.setItem(
+                "q1clear",
+                "yes"
+                );
+            }
+
+            if(inputId === "answer2"){
+
+                sessionStorage.setItem(
+                "q2clear",
+                "yes"
+                );
+            }
+
+            if(inputId === "answer3"){
+
+                sessionStorage.setItem(
+                "q3clear",
+                "yes"
+                );
+            }
+
+            if(inputId === "answer4"){
+
+                sessionStorage.setItem(
+                "q4clear",
+                "yes"
+                );
+            }
+
+            if(inputId === "answer5"){
+
+                sessionStorage.setItem(
+                "q5clear",
+                "yes"
+                );
+            }
+
+            updateProgress();
+
             showPage(nextPageId);
 
         },1500);
@@ -196,4 +382,31 @@ nextPageId
 
         alert("答えが違います！");
     }
+}
+
+/* =========================
+   進行率
+========================= */
+
+function updateProgress(){
+
+    let progress = 0;
+
+    if(sessionStorage.getItem("q1clear"))
+    progress = 20;
+
+    if(sessionStorage.getItem("q2clear"))
+    progress = 40;
+
+    if(sessionStorage.getItem("q3clear"))
+    progress = 60;
+
+    if(sessionStorage.getItem("q4clear"))
+    progress = 80;
+
+    if(sessionStorage.getItem("q5clear"))
+    progress = 100;
+
+    progressFill.style.width =
+    progress + "%";
 }

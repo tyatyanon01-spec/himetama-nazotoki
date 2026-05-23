@@ -15,7 +15,25 @@ content="width=device-width, initial-scale=1.0">
 
 
 </head>
+<!-- 未スタート警告 -->
+<section id="not-started" class="page">
 
+    <img src="images/start.png"
+    class="story-image">
+
+    <h1 class="answer-title">
+        ACCESS ERROR
+    </h1>
+
+    <p class="typing"
+    data-text="ひめたま本部から謎解きがスタートできるよ">
+    </p>
+
+    <button onclick="showPage('login')">
+        戻る
+    </button>
+
+</section>
 <body>
 <!-- QRスキャン演出 -->
 
@@ -544,4 +562,7 @@ src="sounds/wrong.mp3"></audio>
 <script src="script.js"></script>
 
 </body>
+<div id="progress-bar">
+    <div id="progress-fill"></div>
+</div>
 </html>
