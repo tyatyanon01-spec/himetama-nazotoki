@@ -470,3 +470,23 @@ function goBack(){
         showPage("login");
     }
 }
+function showHint(id){
+
+    const hint =
+    document.getElementById(id);
+
+    if(hint){
+
+        hint.style.display = "block";
+        hint.animate(
+        [
+            {opacity:0},
+            {opacity:1}
+        ],
+        {
+            duration:500,
+            fill:"forwards"
+        });
+
+    }
+}
