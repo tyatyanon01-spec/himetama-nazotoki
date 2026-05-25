@@ -478,6 +478,7 @@ function showHint(id){
     if(hint){
 
         hint.style.display = "block";
+
         hint.animate(
         [
             {opacity:0},
@@ -487,6 +488,5 @@ function showHint(id){
             duration:500,
             fill:"forwards"
         });
-
     }
 }
