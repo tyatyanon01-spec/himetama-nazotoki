@@ -798,5 +798,5 @@ html,body{
     flex-shrink:0;
 }
 .hint{
-    display:block !important;
+    display:none;
 }
